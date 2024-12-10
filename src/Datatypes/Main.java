@@ -16,13 +16,16 @@ public class Main {
                     "2. Operaciones (con float)\n" +
                     "3. Uso de constante: área de un círculo\n" +
                     "4. Comparar datos (int)\n" +
-                    "5. \n" +
+                    "5. Submenú cadenas\n" +
+                    "6. \n" +
+                    "7. \n" +
+                    "8. \n" +
                     "0. Cerrar");
             op = sc.nextInt();
 
             switch (op) {
                 case 1:
-                    ejercicios.Menu();
+                    ejercicios.SubMenuConvertir();
                     break;
 
                 case 2:
@@ -39,6 +42,10 @@ public class Main {
                     }else{
                         System.out.println("No son iguales");
                     }
+                    break;
+
+                case 5:
+                    ejercicios.SubMenuCadenas();
                     break;
             }
 

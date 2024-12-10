@@ -14,7 +14,7 @@ public class Ejercicios {
     float b;
 
 
-    public void Menu() {
+    public void SubMenuConvertir() {
 
         do {
             System.out.println("Ingrese una opción\n" +
@@ -109,4 +109,48 @@ public class Ejercicios {
         return yesnt;
     }
 
+    public void SubMenuCadenas(){
+
+        do {
+            System.out.println("Submenu cadenas\n" +
+                    "1. Longitud\n" +
+                    "2. Comparar cadenas\n" +
+                    "0. Cerrar");
+
+            op=sc.nextInt();
+            sc.nextLine();
+            switch (op){
+                case 1:
+                    longCadena();
+                    break;
+
+                case 2:
+
+                    break;
+            }
+        }while(op!=0);
+
+    }
+
+    public void longCadena(){
+        System.out.println("Ingrese su nombre completo");
+        cadena = sc.nextLine().replace(" ", ""); // replace para quitar todos los espaios
+        // cadena=cadena.trim(); para borrar espacios al principio y final
+        System.out.println("Longitud:"+cadena.length()); //.lenght para obtener el tamaño
+    }
+
+    public void compararCadena(){
+        String passw;
+        System.out.println("Contraseña nueva:");
+        passw = sc.nextLine();
+        System.out.println("Confirmar contraseña:");
+
+        if (sc.nextLine().equals(passw)){
+            System.out.println("Contraseña cambiada");
+        }else{
+            System.out.println("Confirmación no coincide");
+        }
+    }
+
 }
+
