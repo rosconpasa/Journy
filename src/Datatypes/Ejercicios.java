@@ -10,6 +10,8 @@ public class Ejercicios {
     int entero;
     double decimal;
     String cadena;
+    float a;
+    float b;
 
 
     public void Menu() {
@@ -50,22 +52,61 @@ public class Ejercicios {
 
     }
 
-    public void doubleAint(){
+    public void doubleAint() {
         System.out.println("Ingrese un double");
-        decimal=sc.nextDouble();
+        decimal = sc.nextDouble();
         System.out.println("Pasando a int...se perderán los decimales");
-        entero=(int)decimal; //casting explicito
+        entero = (int) decimal; //casting explicito
         System.out.println("Hecho. \n" +
-                "Número entero: "+entero);
+                "Número entero: " + entero);
     }
 
     public void stringAint() {
         System.out.println("Ingrese un número entero");
         cadena = sc.nextLine();
         System.out.println("Pasando a número...");
-        entero=Integer.parseInt(cadena);
+        entero = Integer.parseInt(cadena);
         System.out.println("Hecho.");
     }
 
+    public String operarFloat() {
+
+        System.out.println("Ingrese un float a y un float b");
+        a = sc.nextFloat();
+        b = sc.nextFloat();
+
+        String res = "Suma: " + (a + b) + "\n" +
+                "Resta: " + (a - b) + "\n" +
+                "Multiplicación: " + (a * b) + "\n" +
+                "División:" + (a / b);
+        return res;
+    }
+
+    public double areaCirculo() {
+
+        final double PI = 3.1416; //Creando una dato que no varía o constante
+        System.out.println("Ingrese el radio del círculo");
+        double radio = sc.nextDouble();
+        double res = PI * Math.pow(radio, 2);
+        //System.out.println("Usando la constante de java: "+Math.PI*Math.pow(radio, 2));
+        return res;
+    }
+
+    public boolean sonIguales() {
+
+        boolean yesnt;
+
+        System.out.println("Ingrese un entero y luego otro");
+        a = sc.nextInt();
+        b = sc.nextInt();
+
+        if (a == b) {
+            yesnt = true;
+        } else {
+            yesnt = false;
+        }
+
+        return yesnt;
+    }
 
 }
