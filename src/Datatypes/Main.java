@@ -11,7 +11,7 @@ public class Main {
         Ejercicios ejercicios = new Ejercicios();
 
         do {
-            System.out.println("_____________Menú_____________\n" +
+            System.out.println("-------------Menu------------\n" +
                     "1. Convertir tipos de datos\n" +
                     "2. Operaciones (con float)\n" +
                     "3. Uso de constante: área de un círculo\n" +
