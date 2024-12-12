@@ -1,5 +1,6 @@
 package Datatypes;
 
+import javax.print.attribute.SetOfIntegerSyntax;
 import java.util.Scanner;
 
 public class Ejercicios {
@@ -9,9 +10,11 @@ public class Ejercicios {
 
     int entero;
     double decimal;
-    String cadena;
+    String cadena, cadena2;
     float a;
     float b;
+    StringBuilder texto;
+    String cadena3 = "Hola";
 
 
     public void SubMenuConvertir() {
@@ -119,8 +122,9 @@ public class Ejercicios {
                     "4. Subcadenas\n" +
                     "5. Invertir cadena\n" +
                     "6. Contar vocales\n" +
-                    "7. \n" +
-                    "8. \n" +
+                    "7. Palíndromo\n" +
+                    "8. Contiene palabra\n" +
+                    "9. Dividir cadena\n" +
                     "0. Cerrar");
 
             op = sc.nextInt();
@@ -148,6 +152,18 @@ public class Ejercicios {
 
                 case 6:
                     contarVocales();
+                    break;
+
+                case 7:
+                    palindromo();
+                    break;
+
+                case 8:
+                    contieneCadena();
+                    break;
+
+                case 9:
+                    dividirCadena();
                     break;
             }
         } while (op != 0);
@@ -178,7 +194,7 @@ public class Ejercicios {
         System.out.println("Ingrese una cadena");
         cadena = sc.nextLine();
         System.out.println("Ingrese la cadena que desea concatenar");
-        String cadena2 = sc.nextLine();
+        cadena2 = sc.nextLine();
 
         return "Concatenación: " + cadena + " ".concat(cadena2);
     }
@@ -203,7 +219,7 @@ public class Ejercicios {
     public void invertirCadena() {
         System.out.println("Ingrese una cadena");
         cadena = sc.nextLine();
-        String cadena2 = "";
+        cadena2 = "";
 
         System.out.println("Invirtiendo...");
 
@@ -231,12 +247,155 @@ public class Ejercicios {
                 contador++;
             }
         }
-        if (contador>0){
-            System.out.println("La cadena contiene: "+contador+ " vocales");
-        }else{
+        if (contador > 0) {
+            System.out.println("La cadena contiene: " + contador + " vocales");
+        } else {
             System.out.println("La cadena no contiene vocales");
         }
     }
+
+    public void palindromo() {
+        System.out.println("Ingrese un palíndromo");
+        cadena = sc.nextLine();
+
+        System.out.println("Procesando...");
+
+        cadena2 = "";
+
+        for (int i = cadena.length() - 1; i >= 0; i--) {
+            cadena2 = cadena2 + cadena.charAt(i);
+        }
+
+        if (cadena.equals(cadena2)) {
+            System.out.println("Es un palíndromo");
+        } else {
+            System.out.println("No es un palíndromo");
+        }
+    }
+
+    public void contieneCadena() {
+
+        String cadena = "Hola, mundo...";
+        System.out.println("Frase: " + cadena);
+        cadena = cadena.toLowerCase();
+
+        System.out.println("Ingrese la palabra a buscar");
+        cadena2 = sc.nextLine().toLowerCase();
+
+
+        if (cadena.contains(cadena2)) {
+            System.out.println("Palabra encontrada");
+        } else {
+            System.out.println("Palabara no encontrada");
+        }
+
+    }
+
+    public void dividirCadena() {
+        System.out.println("Escriba varias palabras separadas por comas");
+        cadena = sc.nextLine();
+
+        String[] palabras = cadena.split(",");
+        System.out.println("Palabras:");
+        for (int i = 0; i < palabras.length; i++) {
+            System.out.println(palabras[i]);
+        }
+    }
+
+    public void submenuSB() {
+        do {
+
+            System.out.println("___________Submenu Stringbuilder____________\n" +
+                    "1. Insertar texto\n" +
+                    "2. Agregar texto al final\n" +
+                    "3. Invertir texto\n" +
+                    "4. Reemplazar texto\n" +
+                    "5. Eliminar palabra\n" +
+                    "0. Cerrar");
+
+            op = sc.nextInt();
+            sc.nextLine();
+
+            switch (op) {
+                case 1:
+                    insertarTexto();
+                    break;
+
+                case 2:
+                    agregarTexto();
+                    break;
+
+                case 3:
+                    invertirTexto();
+                    break;
+
+                case 4:
+                    reemplazarTexto();
+                    break;
+
+                case 5:
+                    eliminarPalabra();
+                    break;
+            }
+        } while (op != 0);
+
+
+    }
+
+    public void insertarTexto() {
+        texto = new StringBuilder("Aprender es divertido");
+
+        System.out.println(texto+"\n Ingresa 'Java' depúes de 'aprender' ");
+        texto.insert(9, sc.nextLine()+" ");
+        System.out.println("Nuevo texto: " + texto);
+
+    }
+
+    public void agregarTexto(){
+        texto= new StringBuilder(cadena3);
+        System.out.println("Frase: "+texto);
+
+        System.out.println("¿Qué palabra desea agregar?");
+        texto.append(sc.nextLine());
+
+        System.out.println("Nueva frase: "+texto);
+    }
+
+    public void invertirTexto(){
+        System.out.println("Ingresa un texto");
+        texto = new StringBuilder(sc.nextLine());
+        System.out.println("Texto invertido: "+texto.reverse());
+    }
+
+    public void  reemplazarTexto(){
+        texto = new StringBuilder(cadena3);
+
+        System.out.println("Texto: "+texto);
+        System.out.println("¿Con qué palabra desea reemplazarlo?");
+        texto.replace(0, texto.length(), sc.nextLine());
+
+        System.out.println("Nuevo texto:" +texto);
+    }
+
+    public void eliminarPalabra(){
+        texto=new StringBuilder("Aprender Java es divertido.");
+        System.out.println("Frase: "+texto+"\n" +
+                "¿Qué palabra desea eliminar? ");
+
+        cadena = sc.nextLine().toLowerCase();
+        cadena2 = texto.toString().toLowerCase();
+
+        if (cadena2.contains(cadena)){
+            int a = cadena2.indexOf(cadena);
+            int b = a + cadena.length();
+            texto.delete(a,b);
+
+            System.out.println("Nueva frase: "+texto);
+        }else{
+            System.out.println("Palabra no encontrada");
+        }
+    }
+
 
 
 }

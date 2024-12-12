@@ -16,8 +16,8 @@ public class Main {
                     "2. Operaciones (con float)\n" +
                     "3. Uso de constante: área de un círculo\n" +
                     "4. Comparar datos (int)\n" +
-                    "5. Submenú cadenas\n" +
-                    "6. \n" +
+                    "5. Submenú String\n" +
+                    "6. Submenú Stringbuilder\n" +
                     "7. \n" +
                     "8. \n" +
                     "0. Cerrar");
@@ -46,6 +46,10 @@ public class Main {
 
                 case 5:
                     ejercicios.SubMenuCadenas();
+                    break;
+
+                case 6:
+                    ejercicios.submenuSB();
                     break;
             }
 
