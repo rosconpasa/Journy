@@ -18,8 +18,6 @@ public class Main {
                     "4. Comparar datos (int)\n" +
                     "5. Submenú String\n" +
                     "6. Submenú Stringbuilder\n" +
-                    "7. \n" +
-                    "8. \n" +
                     "0. Cerrar");
             op = sc.nextInt();
 
@@ -51,6 +49,7 @@ public class Main {
                 case 6:
                     ejercicios.submenuSB();
                     break;
+
             }
 
         } while (op != 0);
