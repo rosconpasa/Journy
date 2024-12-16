@@ -37,7 +37,7 @@ public class Ejercicios {
                     break;
 
                 case 3:
-
+                    stringAint();
                     break;
             }
         } while (op != 0);

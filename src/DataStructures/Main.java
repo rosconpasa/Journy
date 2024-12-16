@@ -14,7 +14,8 @@ public class Main {
 
             System.out.println("------------Menú principal-----------\n" +
                     "1. Arrays\n" +
-                    "2. \n" +
+                    "2. Arrays bidimensionales\n" +
+                    "3. \n" +
                     "0. Salir");
 
             op=sc.nextInt();
@@ -22,6 +23,10 @@ public class Main {
             switch (op){
                 case 1:
                     ejercicios.arrays();
+                    break;
+
+                case 2:
+                    ejercicios.ArrayBidimensional();
                     break;
             }
         } while (op != 0);
