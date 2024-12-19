@@ -14,7 +14,7 @@ public class Main {
         do {
             System.out.println("------------Menú------------\n" +
                     "1. ArrayList\n" +
-                    "2. \n" +
+                    "2. LinkedList\n" +
                     "3. \n" +
                     "4. \n" +
                     "5. \n" +
