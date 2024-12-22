@@ -9,6 +9,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Ejercicios ejercicios = new Ejercicios();
+        Ejercicios2 ejercicios2 = new Ejercicios2();
         int op;
 
         do {
@@ -25,6 +26,10 @@ public class Main {
             switch (op) {
                 case 1:
                     ejercicios.menuArrayList();
+                    break;
+
+                case 2:
+                    ejercicios2.menuLinkedList();
                     break;
             }
         } while (op != 0);

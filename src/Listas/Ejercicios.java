@@ -1,9 +1,6 @@
 package Listas;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Ejercicios {
     int op;
@@ -25,6 +22,7 @@ public class Ejercicios {
                     "7. Agregar lista\n" +
                     "8. Limpiar lista\n" +
                     "9. Eliminar coincidencias\n" +
+                    "10. Ordenar lista\n" +
                     "0. Cerrar");
             op = sc.nextInt();
 
@@ -63,6 +61,9 @@ public class Ejercicios {
                     borrarCoindidencias();
                     break;
 
+                case 10:
+ordenarLista(arraylist);
+                    break;
             }
         } while (op != 0);
     }
@@ -167,5 +168,13 @@ public class Ejercicios {
         }
         mostrarLista(arraylist);
 
+    }
+
+    public void ordenarLista(List<Integer> arraylist){
+        System.out.println("Lista original");
+        mostrarLista(arraylist);
+        System.out.println("Lista ordenada");
+        Collections.sort(arraylist);
+        mostrarLista(arraylist);
     }
 }
