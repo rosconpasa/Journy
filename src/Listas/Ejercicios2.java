@@ -1,15 +1,13 @@
 package Listas;
 
-import java.util.LinkedList;
-import java.util.Random;
-import java.util.Scanner;
-import java.util.List;
+import java.util.*;
 
 public class Ejercicios2 {
     int op;
     Scanner sc = new Scanner(System.in);
     List<Integer> linkedlist = new LinkedList<>();
     Random random = new Random();
+    int a;
 
     public void menuLinkedList() {
         do {
@@ -17,7 +15,7 @@ public class Ejercicios2 {
                     "1. Rellenar lista\n" +
                     "2. Mostrar lista\n" +
                     "3. Insertar otra lista\n" +
-                    "4. \n" +
+                    "4. Eliminar elemento\n" +
                     "5. \n" +
                     "6. \n" +
                     "7. \n" +
@@ -36,6 +34,10 @@ public class Ejercicios2 {
 
                 case 3:
                     agregarLista(linkedlist);
+                    break;
+
+                case 4:
+                    elimarElemento(linkedlist);
                     break;
             }
 
@@ -67,5 +69,23 @@ public class Ejercicios2 {
         System.out.println("Insertar lista 2 a lista 1:");
         lista.addAll(linkedlist2);
         mostrarLista(lista);
+    }
+
+    public void elimarElemento(List<Integer> lista){
+        mostrarLista(lista);
+        System.out.println("Ingrese la posición del elemento a eliminar");
+        a = sc.nextInt();
+        lista.remove(a);
+        System.out.println("Eliminado.");
+        mostrarLista(lista);
+    }
+
+    public void agregarPoscicion(List <Integer> lista){
+        mostrarLista(lista);
+        System.out.println("¿Qué elemento desea añadir?");
+        a = sc.nextInt();
+        System.out.println("¿En que posición?");
+        int posc = sc.nextInt();
+        lista.add(posc, a);
     }
 }
