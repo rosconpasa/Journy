@@ -8,6 +8,7 @@ public class Ejercicios {
     Random random = new Random();
     List<Integer> arraylist = new ArrayList<>();
     List<Integer> arraylist2 = new ArrayList<>();
+    ArrayList<Integer> arrayList3 = new ArrayList<>();
     int posc;
 
     public void menuArrayList() {
@@ -23,7 +24,10 @@ public class Ejercicios {
                     "8. Limpiar lista\n" +
                     "9. Eliminar coincidencias\n" +
                     "10. Ordenar lista\n" +
+                    "11. Prueba 'error'\n" +
+                    "12. Pruba 'error 2'\n" +
                     "0. Cerrar");
+
             op = sc.nextInt();
 
             switch (op) {
@@ -62,11 +66,32 @@ public class Ejercicios {
                     break;
 
                 case 10:
-ordenarLista(arraylist);
+                    ordenarLista(arraylist);
+                    break;
+
+                case 11:
+                    prueba(arraylist);
+                    break;
+
+                case 12:
+                    prueba2(arrayList3);
                     break;
             }
         } while (op != 0);
     }
+
+    public void prueba(List<Integer> lista){
+        lista.addFirst(2);
+        lista.addFirst(1);
+        System.out.println("Lista: "+lista.getFirst()+", "+lista.getLast());
+    }
+
+    public void prueba2(ArrayList<Integer> lista){
+        lista.addFirst(2);
+        lista.addFirst(1);
+        System.out.println("Lista: "+lista.getFirst()+", "+lista.getLast());
+    }
+
 
     public void rellenarLista(List<Integer> arraylist) {
         System.out.println("Rellenando lista con numeros aleatorios");
