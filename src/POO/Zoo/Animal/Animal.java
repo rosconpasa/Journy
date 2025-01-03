@@ -38,6 +38,10 @@ public abstract class Animal {
     public abstract boolean dormir();
 
 
+    public String toString(){
+        return ". Tiene "+getEdad()+" años"+". Es un "+getTipoAnimal()+" "+isEsMacho()+" de color "+getColor();
+    }
+
     public boolean isHaComido() {
         return haComido;
     }
@@ -62,8 +66,8 @@ public abstract class Animal {
         this.edad = edad;
     }
 
-    public boolean isEsMacho() {
-        return esMacho;
+    public String isEsMacho() {
+        return esMacho ? ".Es macho" : ".Es hembra";
     }
 
     public void setEsMacho(boolean esMacho) {

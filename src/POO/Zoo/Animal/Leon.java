@@ -8,7 +8,7 @@ public class Leon extends Animal{
 
     @Override
     public String hacerSonido() {
-        return "Rooooar!!!!";
+        return getNombre()+": Rooooar!!!!";
     }
 
     @Override
