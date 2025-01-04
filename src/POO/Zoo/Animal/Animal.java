@@ -10,12 +10,13 @@ public abstract class Animal {
     private String color;
     private boolean haComido;
     private boolean estaDormido;
+    private int id;
 
 
     public Animal() {
     }
 
-    public Animal(String nombre, int edad, String tipoAnimal, boolean esMacho, double peso, double altura, String color) {
+    public Animal(int id, String nombre, int edad, String tipoAnimal, boolean esMacho, double peso, double altura, String color) {
         this.nombre = nombre;
         this.edad = edad;
         this.tipoAnimal=tipoAnimal;
@@ -25,7 +26,7 @@ public abstract class Animal {
         this.color=color;
     }
 
-    public Animal(String nombre, int edad, String tipoAnimal, boolean esMacho, String color) {
+    public Animal(int id, String nombre, int edad, String tipoAnimal, boolean esMacho, String color) {
         this.nombre = nombre;
         this.edad = edad;
         this.tipoAnimal=tipoAnimal;
@@ -35,11 +36,18 @@ public abstract class Animal {
 
 
     public abstract String hacerSonido();
-    public abstract boolean dormir();
+    public abstract void dormir();
 
 
-    public String toString(){
-        return ". Tiene "+getEdad()+" años"+". Es un "+getTipoAnimal()+" "+isEsMacho()+" de color "+getColor();
+    public abstract String toString();
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public boolean isHaComido() {
@@ -67,7 +75,7 @@ public abstract class Animal {
     }
 
     public String isEsMacho() {
-        return esMacho ? ".Es macho" : ".Es hembra";
+        return esMacho ? "es macho" : "es hembra";
     }
 
     public void setEsMacho(boolean esMacho) {

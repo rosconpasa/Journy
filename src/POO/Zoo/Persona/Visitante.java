@@ -1,7 +1,6 @@
 package POO.Zoo.Persona;
 
-import POO.Zoo.Ticket;
-import POO.Zoo.Zoologico;
+import POO.Zoo.ZooInfraestructura.*;
 
 import java.util.Scanner;
 
@@ -24,26 +23,15 @@ public class Visitante extends Persona {
         return "Hola! Soy "+getNombre();
     }
 
-    public boolean comprarTicket(Ticket ticket){
-        System.out.println("Hola "+getNombre()+". ¿Cúantos tickets desea comprar?");
-        int cantidad=sc.nextInt();
-        int total=cantidad*ticket.getPrecio();
-
-        if (getDinero()<total){
-            System.out.println("Lo siento, no le alcanza");
-        }else{
-            ticket.setCantidad(cantidad);
-            System.out.println("Sería un total de "+total+" pesos.");
-            setDinero(getDinero()-total);
-            setTieneTicket(true);
-            ticket.setCantidad(ticket.getCantidad()-cantidad);
-        }
+    public boolean comprarTicket(int total){
+        setDinero(getDinero()-total);
+        setTieneTicket(true);
         return isTieneTicket();
     }
 
     public boolean entrar(Zoologico zoo){
         if (isTieneTicket() && zoo.isAbierto() ){
-            System.out.println("Buenas!!");
+            System.out.println(getNombre()+": Buenas!!");
         }else if (isTieneTicket() && !zoo.isAbierto()){
             System.out.println("Lo siento. Estamos cerrados");
         } else if (!isTieneTicket()) {

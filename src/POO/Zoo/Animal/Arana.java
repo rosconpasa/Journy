@@ -8,10 +8,10 @@ public class Arana extends Animal{
 
 
 
-    public Arana(String nombre, int edad, String tipoAnimal,  boolean esMacho, String color,
+    public Arana(int id, String nombre, int edad, String tipoAnimal,  boolean esMacho, String color,
                  String especie, boolean venenosa, int numeroPatas){
 
-        super(nombre, edad, tipoAnimal, esMacho, color);
+        super(id, nombre, edad, tipoAnimal, esMacho, color);
         this.especie=especie;
         this.venenosa=venenosa;
         this.numeroPatas=numeroPatas;
@@ -26,10 +26,14 @@ public class Arana extends Animal{
     }
 
 
+    @Override
+    public void dormir() {
+
+    }
 
     @Override
-    public boolean dormir() {
-        return false;
+    public String toString() {
+        return "Nombre: "+getNombre();
     }
 
     public String getEspecie() {

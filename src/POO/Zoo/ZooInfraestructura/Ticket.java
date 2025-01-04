@@ -1,4 +1,4 @@
-package POO.Zoo;
+package POO.Zoo.ZooInfraestructura;
 
 public class Ticket {
     private int precio;
