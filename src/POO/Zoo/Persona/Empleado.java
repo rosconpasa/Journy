@@ -74,6 +74,8 @@ public class Empleado extends Persona {
     }
 
 
+
+
     @Override
     public String saludar(){
         return "Hola! Soy "+getNombre()+" y mi puesto es "+getCargo()+". Háblame si necesitas algo";
