@@ -26,7 +26,6 @@ public class Filter {
 
 
     public static List<Student> pass(List<Student> list) {
-
         return list.stream().
                 filter(x -> x.getGrade() >= 3).
                 collect(Collectors.toList());
@@ -44,4 +43,5 @@ public class Filter {
                 filter(x->x.toLowerCase().contains("a")).
                 collect(Collectors.toList());
     }
+
 }

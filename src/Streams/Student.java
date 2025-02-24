@@ -46,16 +46,18 @@ public class Student {
         return age == student.age && Double.compare(grade, student.grade) == 0 && Objects.equals(name, student.name);
     }
 
+
+
     @Override
     public int hashCode() {
         return Objects.hash(name, age, grade);
     }
 
     @Override
-    public java.lang.String toString() {
-        return "{name:" + name +
+    public String toString() {
+        return "name:" + name +
                 ", age:" + age +
                 ", grade:" + grade +
-                "}";
+                "\n";
     }
 }

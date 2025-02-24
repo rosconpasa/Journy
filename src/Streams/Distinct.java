@@ -16,6 +16,17 @@ public class Distinct {
                 collect(Collectors.toList());
     }
 
+    public static List<Student> uniqueStudent(List<Student> list){
+        return list.stream().
+                distinct().
+                collect(Collectors.toList());
+    }
+
+    public static List<String> getNames(List<Student> list){
+        return list.stream().
+                distinct().map(Student::getName).
+                collect(Collectors.toList());
+    }
 
 
 }

@@ -148,7 +148,7 @@ public class Ejercicios {
         } else {
             System.out.println("Ingrese la posición del elemento a eliminar");
             posc = sc.nextInt();
-            System.out.println("Eliminando");
+            System.out.println("Eliminando...");
             arraylist.remove(posc);
             System.out.println("Elemento eliminado");
             mostrarLista(arraylist);
