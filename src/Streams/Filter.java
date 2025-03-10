@@ -44,4 +44,11 @@ public class Filter {
                 collect(Collectors.toList());
     }
 
+    public static List<Integer> oodNumbers(List<Integer> list){
+        return list.stream().
+                filter(x -> x%2!=0).
+                sorted().
+                collect(Collectors.toList());
+    }
+
 }

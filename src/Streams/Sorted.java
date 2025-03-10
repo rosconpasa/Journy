@@ -14,23 +14,20 @@ public class Sorted {
                 collect(Collectors.toList());
     }
 
-    public static List<Student> sortedStudents (List<Student> list){
-        return list.stream().
-                sorted().
-                collect(Collectors.toList());
-    }
 
-    public static List<String> reversedSorting(List<String> list){
+
+    public static List<String> reversedSorting(List<Student> list){
         return list.stream().
+                map(Student::getName).
                 sorted(Collections.reverseOrder()).
                 collect(Collectors.toList());
 
     }
 
-    public static int[] sortedNumbers(int[] array){
-        return Arrays.stream(array).
+    public static List<Integer> sortedNumbers(List<Integer> list){
+        return list.stream().
                 sorted().
-                toArray();
+                collect(Collectors.toList());
     }
 
 

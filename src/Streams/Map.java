@@ -41,5 +41,11 @@ public class Map {
                 collect(Collectors.toList());
     }
 
+    public static List<String> firstTwoCharacters(List<String> list){
+        return list.stream().
+                map(x -> x.substring(1, 3)).
+                toList();
+    }
+
 
 }
